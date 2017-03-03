@@ -1,0 +1,33 @@
+################################################################################
+#
+#  NetFPGA-10G http://www.netfpga.org
+#
+#  File:
+#        nf10_aes_v2_1_0_a.pao
+#
+#  Author:
+#        Maciej Tota
+#
+#  Description:
+#        Peripheral Analyze Order File
+#
+#
+
+lib proc_common_v3_00_a  all
+lib axi_lite_ipif_v1_01_a all
+lib nf10_aes_v1_00_a axi_lite_ipif_1bar.vhd vhdl # comment when implementating
+lib nf10_aes_v1_00_a ipif_regs.v verilog		# comment when implementating
+
+#lib nf10_proc_common_v1_00_a all				# comment when simulating
+
+####AES####
+lib nf10_aes_v1_00_a aes_sbox.v verilog
+lib nf10_aes_v1_00_a aes_rcon.v verilog
+lib nf10_aes_v1_00_a aes_key_expand_128.v verilog
+lib nf10_aes_v1_00_a aes_cipher_top.v verilog
+lib nf10_aes_v1_00_a wrapper_aes_cipher_top.v verilog
+
+####NF10_AES####
+lib nf10_aes_v1_00_a nf10_aes_v1_00_a.v verilog
+lib nf10_aes_v1_00_a fallthrough_small_fifo_v2.v verilog
+lib nf10_aes_v1_00_a small_fifo_v3.v verilog
